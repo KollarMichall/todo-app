@@ -51,8 +51,8 @@ export const TodoList: React.FC<TodoListProps> = () => {
                 <Box sx={{ display: "flex" }}>
                   <Button sx={{ mr: 1}} onClick={() => dispatch(setFilter(ActionType.FILTER_ALL))} variant="contained">All</Button>
                   <Button sx={{ mr: 1}}  onClick={() => dispatch(setFilter(ActionType.FILTER_ACTIVE))} variant="contained">Active</Button>
-                  <Button onClick={() => dispatch(setFilter(ActionType.FILTER_COMPLETE))} variant="contained">Done</Button>
-                  <SearchBox />
+                  <Button onClick={() => dispatch(setFilter(ActionType.FILTER_COMPLETE))} variant="contained">COMPLETE</Button>
+                  <SearchBox todos={todos}/>
                 </Box>
                 <IconButton>
                   <ClearIcon color="error" onClick={() => dispatch(deleteTodo(todo?.id, navigate))} />

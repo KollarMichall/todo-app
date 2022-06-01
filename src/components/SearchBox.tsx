@@ -42,10 +42,24 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
         },
     },
 }));
+interface Props {
+    todos: any;
 
+}
 
-export const SearchBox = () => {
+export const SearchBox: React.FC<Props> = ({todos}) => {
     const [searchQuery, setSearchQuery] = useState("");
+
+    // const filteredTodos = todos.filter(
+    //     (todo: any) => {
+    //       return (
+    //         todo
+    //         .title
+    //         .toLowerCase()
+    //         .includes(searchQuery.toLowerCase()) 
+    //       );
+    //     }
+    //   );
 
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
         setSearchQuery(e.target.value);

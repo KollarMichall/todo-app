@@ -1,11 +1,9 @@
-import React, { FormEvent, useEffect, useState } from "react";
-import { DeleteForever, EditNotifications } from "@mui/icons-material";
-import { Box, Checkbox, Grid, IconButton, List, ListItem, ListItemButton, ListItemIcon, ListItemText, ListSubheader, Paper } from "@mui/material";
-import { useDispatch, useSelector } from "react-redux";
+import React from "react";
+import { DeleteForever } from "@mui/icons-material";
+import { Checkbox, IconButton, ListItem, ListItemButton, ListItemIcon, ListItemText } from "@mui/material";
+import { useDispatch } from "react-redux";
 import { deleteTodo, toggleItem } from "../redux/actions/todos";
-import { ItemForm } from "./ItemForm";
 import { useNavigate } from "react-router-dom";
-import { TodoForm } from "./TodoForm";
 
 interface TodoListNameProps {
     item: any;
@@ -15,7 +13,6 @@ interface TodoListNameProps {
 export const TodoListItem: React.FC<TodoListNameProps> = ({ item }) => {
 
     const dispatch = useDispatch<any>();
-    const [isEditOn, setIsEditOn] = useState<boolean>(false);
     const navigate = useNavigate();
 
     const onDelete = () => {

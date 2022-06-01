@@ -1,6 +1,6 @@
 import { alpha, InputBase, styled } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
-import React from 'react'
+import React, { ChangeEvent, useState } from 'react'
 
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
@@ -43,11 +43,13 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     },
 }));
 
-interface Props {
 
-}
+export const SearchBox = () => {
+    const [searchQuery, setSearchQuery] = useState("");
 
-export const SearchBox = (props: Props) => {
+    const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+        setSearchQuery(e.target.value);
+    };
     return (
         <Search>
             <SearchIconWrapper>
@@ -56,6 +58,7 @@ export const SearchBox = (props: Props) => {
             <StyledInputBase
                 placeholder="Search…"
                 inputProps={{ 'aria-label': 'search' }}
+                onChange={handleChange}
             />
         </Search>
     )

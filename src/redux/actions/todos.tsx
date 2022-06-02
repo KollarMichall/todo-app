@@ -3,9 +3,9 @@ import { ActionType } from './actionTypes';
 
 export const getTodos = () => async (dispatch: any) => {
     try {
-        const {data} = await api.fetchTodos();
+        const { data } = await api.fetchTodos();
 
-        dispatch({type: ActionType.FETCH_ALL, payload: data});
+        dispatch({ type: ActionType.FETCH_ALL, payload: data });
 
     } catch (error: any) {
         console.log(error.message);
@@ -13,41 +13,41 @@ export const getTodos = () => async (dispatch: any) => {
 };
 
 export const createTodo = (todo: any, navigate: any) => async (dispatch: any) => {
-try {
-    const {data} = await api.createTodo(todo);
+    try {
+        const { data } = await api.createTodo(todo);
 
-    dispatch({type: ActionType.CREATE, payload: data});
-    navigate('/');
-} catch (error: any) {
-    console.log(error.message);
-}
+        dispatch({ type: ActionType.CREATE, payload: data });
+        navigate('/');
+    } catch (error: any) {
+        console.log(error.message);
+    }
 
 };
 
 
 export const toggleItem = (id: any, item: any, navigate: any) => async (dispatch: any) => {
     try {
-        const {data} = await api.updateItem(id, item);
-        dispatch({type: ActionType.TOGGLE, payload: data});
+        const { data } = await api.updateItem(id, item);
+        dispatch({ type: ActionType.TOGGLE, payload: data });
         navigate('/')
     } catch (error: any) {
         console.log(error.message);
     }
-    
-    };
+
+};
 
 export const deleteTodo = (id: any, navigate: any) => async (dispatch: any) => {
-try {
-    await api.deleteTodo(id);
-    navigate('/')
-    dispatch({type: ActionType.DELETE, payload: id});
-} catch (error: any) {
-    console.log(error.message);
-}
+    try {
+        await api.deleteTodo(id);
+        navigate('/')
+        dispatch({ type: ActionType.DELETE, payload: id });
+    } catch (error: any) {
+        console.log(error.message);
+    }
 
 };
 
 export const setFilter = (filter: string) => ({
     type: ActionType.SET_FILTER,
     value: filter,
-  });
+});

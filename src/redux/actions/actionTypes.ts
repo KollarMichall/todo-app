@@ -1,6 +1,5 @@
 export enum ActionType {
     CREATE = "CREATE",
-    ADD_ITEM = "ADD_ITEM",
     FETCH_ALL = "FETCH_ALL",
     DELETE = "DELETE",
     TOGGLE = "TOGGLE",

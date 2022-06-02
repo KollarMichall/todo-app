@@ -1,5 +1,5 @@
 import React from "react";
-import { List, ListSubheader} from "@mui/material";
+import { List, ListSubheader } from "@mui/material";
 import { ItemForm } from "./ItemForm";
 import { TodoListItem } from "./TodoListItem";
 
@@ -12,21 +12,16 @@ export const TodoListName: React.FC<TodoListNameProps> = ({ todo }) => {
 
 
   return (<>
-    <List 
-
+    <List
       subheader={
         <ListSubheader component="div">
           {todo.name}
         </ListSubheader>
       }
     >
-
       {todo?.name && <ItemForm />}
 
       {todo?.title && <TodoListItem item={todo} />}
-
-
-
     </List>
   </>
   )

@@ -38,7 +38,7 @@ export const TodoList: React.FC<TodoListProps> = () => {
     <Container component="main" maxWidth="lg">
       <CssBaseline />
 
-     {todos.length > 0 && <Box sx={{ p: 2, border: '2px solid grey' }}>
+      {todos.length > 0 && <Box sx={{ p: 2, border: '2px solid grey' }}>
 
         {todos?.map((todo: any) => {
           return (<>
@@ -49,10 +49,10 @@ export const TodoList: React.FC<TodoListProps> = () => {
                 justifyContent="space-between"
               >
                 <Box sx={{ display: "flex" }}>
-                  <Button sx={{ mr: 1}} onClick={() => dispatch(setFilter(ActionType.FILTER_ALL))} variant="contained">All</Button>
-                  <Button sx={{ mr: 1}}  onClick={() => dispatch(setFilter(ActionType.FILTER_ACTIVE))} variant="contained">Active</Button>
+                  <Button sx={{ mr: 1 }} onClick={() => dispatch(setFilter(ActionType.FILTER_ALL))} variant="contained">All</Button>
+                  <Button sx={{ mr: 1 }} onClick={() => dispatch(setFilter(ActionType.FILTER_ACTIVE))} variant="contained">Active</Button>
                   <Button onClick={() => dispatch(setFilter(ActionType.FILTER_COMPLETE))} variant="contained">COMPLETE</Button>
-                  <SearchBox todos={todos}/>
+                  <SearchBox todos={todos} />
                 </Box>
                 <IconButton>
                   <ClearIcon color="error" onClick={() => dispatch(deleteTodo(todo?.id, navigate))} />

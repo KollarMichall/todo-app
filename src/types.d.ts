@@ -1,13 +1,9 @@
 import { ActionType } from "./redux/actions/actionTypes";
 
-type AddTodo = (newTodo: Todo) => void;
-type EditTodo = (todoToEdit: Todo) => void;
-
-
 type Todo = {
   id: string;
   name: string;
-  items: Item;
+  items: Item[];
 }
 type Item = {
   id: string;
@@ -20,8 +16,7 @@ interface SetFilterAction {
   value: string;
 }
 
-export type TodoActionTypes = SetFilterAction;
+type TodoActionTypes = SetFilterAction;
 
-type ToggleComplete = (selectedTodo: Todo) => void;
 
 

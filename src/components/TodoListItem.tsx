@@ -19,7 +19,7 @@ export const TodoListItem: React.FC<TodoListNameProps> = ({ item }) => {
         dispatch(deleteTodo(item?.id, navigate));
     };
     const onToggle = () => {
-        dispatch(toggleItem(item?.id, {...item, complete: !item?.complete}, navigate));
+        dispatch(toggleItem(item?.id, { ...item, complete: !item?.complete }, navigate));
 
     };
 

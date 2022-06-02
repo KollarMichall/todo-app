@@ -8,10 +8,10 @@ import { getTodos } from './redux/actions/todos';
 
 function App() {
   const dispatch = useDispatch<any>();
-    
+
   useEffect(() => {
-     dispatch(getTodos());
-    }, [dispatch])
+    dispatch(getTodos());
+  }, [dispatch])
 
 
   return (

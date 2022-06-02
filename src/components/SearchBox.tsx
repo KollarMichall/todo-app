@@ -47,7 +47,7 @@ interface Props {
 
 }
 
-export const SearchBox: React.FC<Props> = ({todos}) => {
+export const SearchBox: React.FC<Props> = ({ todos }) => {
     const [searchQuery, setSearchQuery] = useState("");
 
     // const filteredTodos = todos.filter(

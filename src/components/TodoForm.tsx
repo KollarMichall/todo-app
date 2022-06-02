@@ -1,5 +1,5 @@
 import { Box, Button, Container, CssBaseline, Grid, TextField, Typography } from '@mui/material';
-import Joi, { any } from 'joi';
+import Joi from 'joi';
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { joiResolver } from "@hookform/resolvers/joi";
@@ -15,7 +15,6 @@ const schema = Joi.object({
     name: Joi.string().required(),
 
 });
-let nextId: number = 1;
 
 export const TodoForm: React.FC<TodoFormProps> = () => {
     const dispatch = useDispatch<any>();
